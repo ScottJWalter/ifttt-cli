@@ -12,8 +12,8 @@ The specification starts Chrome in headless mode with Puppeteer and performs web
 
 ## Notes from the Fork
 _To be clear:  IFTTT has **NO** real API (REST, SOAP, or otherwise) they expose. This CLI tool actually wraps the 
-ifttt.com website, using a headless copy of chromium to surf the site behind the scenes.  
-This makes things somewhat brittle, as any design changes to the website may break this tool's functionality.
+ifttt.com website, using a headless copy of chromium to surf the site behind the scenes. This makes things somewhat 
+brittle, as any design changes to the website may break this tool's functionality.
 &mdash; [SJW](https://github.com/ScottJWalter)_
 
 # DEMO
