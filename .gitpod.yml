@@ -8,5 +8,10 @@ ports:
   - port: 35900
     onOpen: ignore
 tasks:
-  - init: npm install && npm run build
-#   command: npm run watch
+  - init: |
+      touch /tmp/.npm-lock
+      npm install 
+      npm run build
+      rm /tmp/.npm-lock
+  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
+    command: npm install -g .

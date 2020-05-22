@@ -1,4 +1,4 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/miso-develop/ifttt-cli) 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ScottJWalter/ifttt-cli) 
 
 # IFTTT CLI
 Manage IFTTT from the command line.
@@ -9,6 +9,12 @@ Creating a large number of applets can be difficult to manage and maintain.
 With this tool you can easily manage and maintain IFTTT from the command line. 
 
 The specification starts Chrome in headless mode with Puppeteer and performs web operation in the background. 
+
+## Notes from the Fork
+_To be clear:  IFTTT has **NO** real API (REST, SOAP, or otherwise) they expose. This CLI tool actually wraps the 
+ifttt.com website, using a headless copy of chromium to surf the site behind the scenes.  
+This makes things somewhat brittle, as any design changes to the website may break this tool's functionality.
+&mdash; [SJW](https://github.com/ScottJWalter)_
 
 # DEMO
 
