@@ -14,4 +14,6 @@ tasks:
       npm run build
       rm /tmp/.npm-lock
   - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
-    command: npm install -g .
+    command: |
+      npm install -g .
+      ifttt --help
