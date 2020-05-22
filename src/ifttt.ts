@@ -40,6 +40,7 @@ export default class IFTTT {
         args: [
             "--proxy-server=direct://",
             "--proxy-bypass-list=*",
+            "--no-sandbox",
         ],
         headless: false,
     }

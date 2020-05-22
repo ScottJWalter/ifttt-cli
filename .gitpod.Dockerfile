@@ -1,5 +1,5 @@
 FROM gitpod/workspace-full-vnc
-                    
+
 USER gitpod
 
 # Install custom tools, runtime, etc. using apt-get
@@ -11,6 +11,8 @@ USER gitpod
 RUN sudo rm -rf /var/lib/apt/lists/* && \
     sudo apt-get -q update && \
     sudo apt-get -yq dist-upgrade
+
+RUN apt-get install -y --no-install-recommends apt-utils
 
 RUN sudo apt-get install -yq \
     libnspr4 \
