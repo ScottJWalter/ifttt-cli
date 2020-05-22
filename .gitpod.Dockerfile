@@ -9,6 +9,7 @@ USER gitpod
 #    sudo rm -rf /var/lib/apt/lists/*
 
 RUN sudo apt-get -q update && \
+    sudo apt-get install -yq chromium-browser && \
     sudo rm -rf /var/lib/apt/lists/*
 
 # Otherwise this outputs 'gitpod@ws-blah-blah-blah-blah-blah:/workspace/gitpod-tests1$'' in terminal
