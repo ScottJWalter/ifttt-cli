@@ -9,5 +9,5 @@ ports:
     onOpen: ignore
 tasks:
   - command: chromium-browser --no-sandbox
-  - init: npm install && npm run build
-    command: npm run watch
+#  - init: npm install && npm run build
+#    command: npm run watch
