@@ -76,19 +76,23 @@ export class List extends Page {
     public async getAppletList(): Promise<Types.AppletList[]> {
         if (await this.ifttt.existSelector(".btn-primary")) throw strings.message.command.error.noApplet
         
-        const selector = "li.web-applet-card[id]"
+        const selector = "li.web-applet-card"
         await this.ifttt.page.waitForSelector(selector)
         const appletsData: Types.AppletList[] = await this.ifttt.page.$$eval(
             selector,
-            (list: Element[]): Types.AppletList[] => list.map(
+            (list: Element[]): Types.AppletList[] => list.filter(
+                elem => elem.id.length > 1,
+            )
+            .map(
                 (elem: any): Types.AppletList => {
-                    const id: string = elem.dataset.id
-                    const name: string = elem.querySelector("span.title").innerHTML.replace(/\n/, "").trim()
-                    const trigger: string = elem.querySelector("div.content img").getAttribute("title")
-                    const action: string = elem.querySelector("div.meta > div.works-with img") ?
-                        elem.querySelector("div.meta > div.works-with img").getAttribute("title") : trigger
-                    const status: boolean = elem.querySelector("div.meta > div.status")
-                        .innerText.replace(/\n/, "").trim() === "On"
+                    const id: string = elem.id.split(/\s*\-\s*/g)[1]
+                    const name: string = elem.querySelector("span.title > span > div > div")
+                                            .innerHTML.replace(/\n/, "").trim()
+                    const trigger: string = elem.querySelector("div.meta > div.works-with > ul > li:nth-child(1) img")
+                                            .getAttribute("title")
+                    const action: string = elem.querySelector("div.meta > div.works-with > ul > li:nth-child(2) img")
+                                            .getAttribute("title")
+                    const status: boolean = elem.querySelector("div.meta > div.status").innerText.trim() === "Connected"
                     
                     return [
                         id,
@@ -107,12 +111,14 @@ export class List extends Page {
     public async getAllAppletId(): Promise<string[]> {
         if (await this.ifttt.existSelector(".btn-primary")) throw strings.message.command.error.noApplet
         
-        const selector = "li.web-applet-card[id]"
+        const selector = "li.web-applet-card"
         await this.ifttt.page.waitForSelector(selector)
         
         const allId: string[] = await this.ifttt.page.$$eval(
             selector,
-            (list: Element[]): string[] => list.map((elem: any): string => elem.dataset.id),
+            (list: Element[]): string[] => list
+                .filter( elem => elem.id.length > 1 )
+                .map( (elem: any): string => elem.id.split(/\s*\-\s*/g)[1] ),
         )
         return allId
     }
