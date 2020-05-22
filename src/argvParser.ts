@@ -42,6 +42,7 @@ class ArgvParser {
                     // tslint:disable-next-line:max-line-length
                     // command: "login [-e, --email <email> <password>] [-g, --google <id> <password>] [-f, --facebook <id> <password>]", // IMPL: implements -g, -f
                     command: "login [-e, --email <mail address> <password>]",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.login,
                     builder: (yargs: yargs.Argv) => yargs
                         .option("e", {
@@ -87,11 +88,13 @@ class ArgvParser {
                 
                 .command({
                     command: "logout",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.logout,
                 })
                 
                 .command({
                     command: "connect <service>",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.connect,
                     builder: (yargs: yargs.Argv) => yargs
                         .positional("service", {
@@ -103,6 +106,7 @@ class ArgvParser {
                 
                 .command({
                     command: "list [-l, --long]",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.list,
                     builder: (yargs: yargs.Argv) => yargs
                         .options("l", {
@@ -116,6 +120,7 @@ class ArgvParser {
                 
                 .command({
                     command: "get [id..]",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.get,
                     builder: (yargs: yargs.Argv) => yargs
                         .positional("id", {
@@ -136,6 +141,7 @@ class ArgvParser {
                 
                 .command({
                     command: "create <file>",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.create,
                     builder: (yargs: yargs.Argv) => yargs
                         .positional("file", {
@@ -150,6 +156,7 @@ class ArgvParser {
                 
                 .command({
                     command: "delete <id..>",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.delete,
                     builder: (yargs: yargs.Argv) => yargs
                         .positional("id", {
@@ -163,6 +170,7 @@ class ArgvParser {
                 
                 .command({
                     command: "update <file>",
+                    // @ts-ignore
                     desc: strings.message.argv.describe.command.update,
                     builder: (yargs: yargs.Argv) => yargs
                         .positional("file", {
