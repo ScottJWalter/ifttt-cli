@@ -10,11 +10,9 @@ USER gitpod
 
 RUN sudo rm -rf /var/lib/apt/lists/* && \
     sudo apt-get -q update && \
-    sudo apt-get -yq dist-upgrade
-
-RUN apt-get install -y --no-install-recommends apt-utils
-
-RUN sudo apt-get install -yq \
+    sudo apt-get -yq dist-upgrade && \
+    apt-get install -y --no-install-recommends apt-utils && \
+    sudo apt-get install -yq \
     libnspr4 \
     libnss3 \
     libnss3-tools
