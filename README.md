@@ -15,7 +15,7 @@ _Ultimately, this fork will PR back to the original repo.  Until then, here are 
 
 * _IFTTT has **NO** real API (REST, SOAP, or otherwise) they expose. This CLI tool actually wraps the ifttt.com website, using a headless copy of chromium to surf the site behind the scenes. This makes things somewhat brittle, as any design changes to the website may break this tool's functionality._
 * _In the latest site redesign, the `trigger` and `action` identifiers are no longer clearly identified on the site, only the collection of services the app interacts with.  For the most part, this is in order (the first being the trigger, the second the action), but I have seen cases where that's not the case (which appears to be a function of the app developer's decisions).  This fork assumes that `works-with #1` is the trigger and `works-with-#2` is the action._
-* _In fixing chromium to install correctly on GitPod, there may be some additional tools being loaded in the Docker image that aren't necessary.  These will be removed at a later date._
+* _In fixing chromium to install correctly on GitPod, there may be some additional tools being loaded in the Docker image that aren't necessary, but there wasn't a single clear example end-to-end on how to do it, so I had to piece together several different threads.  This will be addressed at a later date._
 
 _&mdash; [SJW](https://github.com/ScottJWalter)_
 
