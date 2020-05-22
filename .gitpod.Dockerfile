@@ -15,7 +15,6 @@ RUN sudo rm -rf /var/lib/apt/lists/* && \
 RUN sudo apt-get install -yq \
     libnspr4 \
     libnss3 \
-    libnss3-nssdb \
     libnss3-tools
 
 #RUN sudo apt-get install -yq \
