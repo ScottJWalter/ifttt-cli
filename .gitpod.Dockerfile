@@ -7,9 +7,9 @@ USER gitpod
 RUN sudo apt-get -q update && \
     sudo apt-get install -yq \
         chromium-browser \
-        libx11-6 \
-        libx11-xcb1 \
-        libxcb1 \
+#        libx11-6 \
+#        libx11-xcb1 \
+#        libxcb1 \
         && \
     sudo rm -rf /var/lib/apt/lists/*
 
