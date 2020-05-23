@@ -7,6 +7,9 @@
         "cli"
     ],
     "author": "Miso Tanaka <miso.develop@gmail.com> (https://twitter.com/miso_develop)",
+    "contributors": [
+        "Scott J. Walter <sjwalter@gmail.com> (https://scottjwalter.info)",
+    ],
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -20,6 +23,9 @@
         "node": ">=8.0.0"
     },
     "main": "index.js",
+    "publishConfig": { 
+        "registry": "https://npm.pkg.github.com/" 
+    },
     "bin": {
         "ifttt": "bin/ifttt.js"
     },
