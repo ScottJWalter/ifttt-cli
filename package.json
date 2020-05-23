@@ -7,9 +7,7 @@
         "cli"
     ],
     "author": "Miso Tanaka <miso.develop@gmail.com> (https://twitter.com/miso_develop)",
-    "contributors": [
-        "Scott J. Walter <sjwalter@gmail.com> (https://scottjwalter.info)",
-    ],
+    "contributors": "Scott J. Walter <sjwalter@gmail.com> (https://scottjwalter.info)",
     "license": "MIT",
     "repository": {
         "type": "git",
