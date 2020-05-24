@@ -16,6 +16,7 @@ export default {
     'table',
     'validator',
     'yargs',
+    'fs'
   ],
   watch: {
     include: 'src/**'
