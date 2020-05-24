@@ -10,6 +10,7 @@ ports:
 tasks:
   - init: |
       touch /tmp/.npm-lock
+      npm install -g npm
       npm install 
       npm run build
       rm /tmp/.npm-lock
